@@ -7,8 +7,14 @@ on:
   push:
     branches: [ "main" ]
 jobs:
+  update:
+    name: Create a branch a PR from that branch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # To push a branch 
+      pull-requests: write  # To create a PR from that branch
+      
   build:
-
     runs-on: self-hosted
 
     strategy:
